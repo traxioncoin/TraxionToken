@@ -1,7 +1,7 @@
 
 import EVMRevert from '../../helpers/EVMRevert';
-var Message = artifacts.require('MessageHelper.sol');
-var ERC827TokenMock = artifacts.require('ERC827TokenMock.sol');
+var Message = artifacts.require('MessageHelper');
+var ERC827TokenMock = artifacts.require('ERC827TokenMock');
 
 var BigNumber = web3.BigNumber;
 var _ = require('lodash');
@@ -34,7 +34,7 @@ contract('ERC827 Token', function (accounts) {
   });
 
   it('should return the correct allowance amount after approval', async function () {
-    let token = await ERC827TokenMock.new();
+    let token = await ERC827TokenMock.new(accounts[0], 100);
     await token.approve(accounts[1], 100);
     let allowance = await token.allowance(accounts[0], accounts[1]);
 
