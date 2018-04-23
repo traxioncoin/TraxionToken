@@ -13,8 +13,8 @@ contract TraxionToken is ERC827Token, Pausable {
 
     function TraxionToken()  public {
         totalSupply_ = INITIAL_SUPPLY;
-        balances[this] = INITIAL_SUPPLY;
-        emit Transfer(0x0, this, INITIAL_SUPPLY);
+        balances[msg.sender] = INITIAL_SUPPLY;
+        emit Transfer(0x0, msg.sender, INITIAL_SUPPLY);
     }
     /** @dev approveData, transferData and transferDataFrom will be used by the TraxionWallet system which spawns a dynamic "Traxion Contract" in ethereum blockchain
              which will be used to communicate with the hyperledger fabric API. Traxion Token will be used in our system  wherein the ABI will be written for its specific transaction.
