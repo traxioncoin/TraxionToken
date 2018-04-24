@@ -1,5 +1,5 @@
 build/
 build/contracts
-node_modules
-migrations
-test
+node_modules/
+migrations/
+test/
