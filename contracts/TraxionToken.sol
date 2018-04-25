@@ -4,7 +4,7 @@ import "../node_modules/zeppelin-solidity/contracts/token/ERC20/PausableToken.so
 import "../node_modules/zeppelin-solidity/contracts/token/ERC827/ERC827Token.sol";
 
 
-contract TraxionToken is ERC827Token, Pausable {
+contract TraxionToken is ERC827Token, PausableToken {
   
     string public constant name = "Traxion Token";
     string public constant symbol = "TXN";
