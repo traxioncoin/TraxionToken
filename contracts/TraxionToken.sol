@@ -28,6 +28,14 @@ contract TraxionToken is ERC827Token, PausableToken {
         return super.transfer(to, value, data);
     }
 
+    function increaseApproval(address spender, uint256 addedValue, bytes data) public whenNotPaused returns (bool) {
+        return super.increaseApproval(spender, addedValue, data);
+    }
+    
+    function decreaseApproval(address spender, uint256 subtractedValue, bytes data) public whenNotPaused returns (bool) {
+        return super.decreaseApproval(spender, subtractedValue, data);
+    }
+
     function transferFrom(address from, address to, uint256 value, bytes data) public whenNotPaused returns (bool) {
         return super.transferFrom(from, to, value, data);
     }
